@@ -117,5 +117,5 @@ def analyze_and_trade():
 # Run the Infinite Loop
 # ==========================================
 if __name__ == "__main__":
-    print("🤖 Multi-Coin EMA Bot with Custom Images started...")
- analyze_and_trade()
+    print("🤖 Multi-Coin EMA Bot started successfully...")
+    analyze_and_trade()
