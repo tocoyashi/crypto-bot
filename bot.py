@@ -42,4 +42,4 @@ COIN_IMAGES = {
     "XLM/USDT": "https://assets.coingecko.com/coins/images/100/large/Stellar_lumens.png",
     "NEAR/USDT": "https://assets.coingecko.com/coins/images/10365/large/near.jpg",
     "APT/USDT": "https://assets.coingecko.com/coins/images/26455/large/aptos_round.png",
-    "SUI/USDT": "https://assets.coingecko.com/coins/images/26340/large/Sui_logo.png
+    "SUI/USDT": "https://assets.coingecko.com/coins/images/26340/large/Sui_logo.png",
