@@ -6,8 +6,8 @@ import time
 from datetime import datetime
 
 # Telegram Settings (Reads from GitHub Secrets)
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-CHANNEL_ID = os.environ.get("CHANNEL_ID")
+BOT_TOKEN = os.environ.get("8870951691:AAHCKTNEr22bxn2hMk_YAjPIenPvQ8bdUUw")
+CHANNEL_ID = os.environ.get("4326423360")
 
 # Trading Settings
 TIMEFRAME = "1h" 
