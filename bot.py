@@ -1,28 +1,29 @@
-import os
 import ccxt
 import pandas as pd
 import requests
 import time
 from datetime import datetime
 
-# Telegram Settings (Reads from GitHub Secrets)
+# Telegram Settings
+import os
 BOT_TOKEN = os.environ.get("8870951691:AAHCKTNEr22bxn2hMk_YAjPIenPvQ8bdUUw")
 CHANNEL_ID = os.environ.get("4326423360")
 
 # Trading Settings
 TIMEFRAME = "1h" 
+CHECK_INTERVAL = 3600 
 
-# List of coins
+# ✨ قائمة العملات التي تريد مراقبتها
 SYMBOLS = [
     "BTC/USDT",
     "ETH/USDT",
     "SOL/USDT",
     "BNB/USDT",
     "XRP/USDT",
-    "DOGE/USDT"
+    "DOGE/USDT" # يمكنك إضافة المزيد هنا
 ]
 
-# Images for each coin
+# ✨✨ روابط الصور لكل عملة (يمكنك إضافة المزيد بزيادة السطور)
 COIN_IMAGES = {
     "BTC/USDT": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
     "ETH/USDT": "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
@@ -31,6 +32,7 @@ COIN_IMAGES = {
     "XRP/USDT": "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png",
     "DOGE/USDT": "https://assets.coingecko.com/coins/images/5/large/dogecoin.png"
 }
+# صورة بديلة إذا أضفت عملة غير موجودة في القاموس أعلاه
 DEFAULT_IMAGE = "https://cdn-icons-png.flaticon.com/512/5968/5968339.png"
 
 def send_crypto_signal(coin_name, direction, entry, leverage, tp1, tp2, sl, image_url):
@@ -85,6 +87,7 @@ def analyze_and_trade():
             prev_ema9 = df['ema_9'].iloc[-2]
             prev_ema21 = df['ema_21'].iloc[-2]
             
+            # ✨ اختيار الصورة المناسبة للعملة
             img = COIN_IMAGES.get(symbol, DEFAULT_IMAGE)
 
             # BUY SIGNAL
@@ -110,6 +113,9 @@ def analyze_and_trade():
         except Exception as e:
             print(f"❌ Error analyzing {symbol}: {e}")
 
+# ==========================================
+# Run the Infinite Loop
+# ==========================================
 if __name__ == "__main__":
     print("🤖 Multi-Coin EMA Bot started successfully...")
     analyze_and_trade()
