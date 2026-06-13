@@ -23,7 +23,7 @@ SYMBOLS = [
     "AAVE/USDT", "GRT/USDT", "PEPE/USDT", "QNT/USDT", "FET/USDT"
 ]
 
-DEFAULT_IMAGE = "https://t.me/PYTHON_SIGNALS_BS/8"
+DEFAULT_IMAGE = "https://t.me/PYTHON_SIGNALS_BS/38"
 
 def get_decimals(price):
     if price > 100:
@@ -41,10 +41,10 @@ def send_crypto_signal(coin_name, direction, strategy, entry, leverage, tp1, tp2
 
     text = f"<b>{emoji} Automated Signal on {coin_name} {emoji}</b>\n<i>Time: {datetime.now().strftime('%Y-%m-%d %H:%M')}</i>\n<b>Strategy:</b> <code>{strategy}</code>\n\n━━━━━━━━━━━━━━━\n<b>Direction:</b> <code>{direction_text}</code>\n<b>Entry:</b> <code>{entry}</code>\n<b>Leverage:</b> <code>{leverage}x</code>\n━━━━━━━━━━━━━━━\n<b>Target 1 (TP1):</b> <code>{tp1}</code>\n<b>Target 2 (TP2):</b> <code>{tp2}</code>\n<b>Target 3 (TP3):</b> <code>{tp3}</code>\n<b>Target 4 (TP4):</b> <code>{tp4}</code>\n━━━━━━━━━━━━━━━\n<b>Stop Loss (SL):</b> <code>{sl}</code>\n━━━━━━━━━━━━━━━\n<i>Automated signal. Trade responsibly.</i>"
 
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendAnimation"
     payload = {
         "chat_id": CHANNEL_ID,
-        "photo": image_url,
+        "animation": image_url,
         "caption": text,
         "parse_mode": "HTML"
     }
